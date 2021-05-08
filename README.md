@@ -1,0 +1,2 @@
+# Express Local Library
+This is a github repository containing the code from this tutorial: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction. This repository was created for me to learn the process of using Express (and also a little bit of MongoDB, and how to host a website).
