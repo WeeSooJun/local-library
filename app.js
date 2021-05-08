@@ -8,6 +8,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
+var compression = require('compression');
+var helmet = require('helmet');
 
 var app = express();
 
@@ -17,6 +19,10 @@ var mongoDB = process.env.MONGODB_URI;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+app.use(helmet());
+app.use(compression()); // Compress all routes
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
